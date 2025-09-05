@@ -3,7 +3,7 @@ name: Deploy Vite App to GitHub Pages
 on:
   push:
     branches:
-      - main   # or your default branch
+      - main
 
 jobs:
   build-deploy:
@@ -16,17 +16,17 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 22   # match your local version
+          node-version: 22
 
       - name: Install dependencies
         run: npm install
 
       - name: Build
-        run: npm run build   # 👈 only build, no export step
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist   # 👈 Vite outputs to dist, not out
-          cname: xyz.example.com # 👈 replace with your domain
+          publish_dir: ./dist
+          cname: xyz.example.com   # replace with your domain
