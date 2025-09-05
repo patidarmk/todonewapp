@@ -4,6 +4,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 export default defineConfig(() => ({
+  base: "/todonewapp/", // 👈 important for GitHub Pages
   server: {
     host: "::",
     port: 8080,
@@ -14,5 +15,4 @@ export default defineConfig(() => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: "/todonewapp/", // 👈 IMPORTANT for GitHub Pages
 }));
