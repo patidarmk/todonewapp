@@ -14,5 +14,5 @@ export default defineConfig(() => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  base: "/todonewapp/", // 👈 IMPORTANT for GitHub Pages
 }));
-
