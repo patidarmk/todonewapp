@@ -3,7 +3,7 @@ name: Deploy Vite App to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main   # or master, depending on your repo
 
 jobs:
   build-deploy:
@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 22
+          node-version: 22   # match your local version
 
       - name: Install dependencies
         run: npm install
@@ -28,5 +28,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          cname: xyz.example.com   # replace with your domain
+          publish_dir: ./dist   # adjust if dist is elsewhere
+          cname: xyz.example.com # replace with your domain
